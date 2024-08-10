@@ -1,15 +1,20 @@
+import { Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
-import { Button } from "./components/ui/button";
+import Home from "./pages/Home";
+import Compiler from "./pages/Compiler";
+import Notfound from "./pages/Notfound";
 
 
 export const App = () => {
   return (
-    <div className="">
+    <>
       <Header />
-      <Button>
-        Click me
-      </Button>
-    </div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/compiler" element={<Compiler />} />
+        <Route path="*" element={<Notfound />} />
+      </Routes>
+    </>
   )
 }
 
