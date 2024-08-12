@@ -9,6 +9,10 @@ module.exports = {
   ],
   prefix: "",
   theme: {
+    fontFamily: {
+      gilroyRegular: ["gilroy-regular"],
+      gilroyBold: ["gilroy-bold"]
+    },
     container: {
       center: true,
       padding: "2rem",

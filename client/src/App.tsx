@@ -3,19 +3,21 @@ import Header from "./components/Header";
 import Home from "./pages/Home";
 import Compiler from "./pages/Compiler";
 import Notfound from "./pages/Notfound";
-
+import { ThemeProvider } from "./components/theme-provider";
 
 export const App = () => {
   return (
     <>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/compiler" element={<Compiler />} />
-        <Route path="*" element={<Notfound />} />
-      </Routes>
+      <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/compiler" element={<Compiler />} />
+          <Route path="*" element={<Notfound />} />
+        </Routes>
+      </ThemeProvider>
     </>
-  )
-}
+  );
+};
 
 export default App;
