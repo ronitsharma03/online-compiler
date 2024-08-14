@@ -97,7 +97,7 @@ const HelperHeader = () => {
           >
             {saveLoading ? (
               <>
-                "Saving " <Loader2Icon className="animate-spin" />
+                Saving <Loader2Icon className="animate-spin" />
               </>
             ) : (
               <>
