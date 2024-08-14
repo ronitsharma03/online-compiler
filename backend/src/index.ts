@@ -19,6 +19,6 @@ app.get("/", (req: Request, res: Response) => {
 });
 
 app.listen(3000, () => {
-    // console.log(process.env.JWT)
+    
   console.log("http://localhost:3000");
 });

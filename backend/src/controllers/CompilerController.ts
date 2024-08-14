@@ -10,7 +10,8 @@ export const saveCode = async (req: Request, res: Response) => {
 
         return res.status(201).json({
             message: "Code Saved successfully",
-            fullCode: newCode
+            fullCode: newCode,
+            urlId: newCode._id
         });
 
     } catch (error) {
@@ -19,3 +20,25 @@ export const saveCode = async (req: Request, res: Response) => {
         });
     }
 };
+
+
+export const getCode = async (req: Request, res: Response) => {
+    const { codeId } = req.body;
+    try {
+        const getCode = await Code.findById(codeId);
+        if(!getCode){
+            return res.status(500).json({
+                message: "Error fetching the code"
+            });
+        }
+
+        return res.json({
+            message: "Code fetched succcessfully",
+            fullCode: getCode.fullCode
+        })
+    } catch (error) {
+        res.status(500).json({
+            message: "Failed to fetch the code "
+        })
+    }
+}
