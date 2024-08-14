@@ -105,10 +105,13 @@ const compilerSlice = createSlice({
     updateCodeValue: (state, action: PayloadAction<string>) => {
         // the values of currentLanguage are already set by redux so we'll take them from there
         state.fullCode[state.currentLanguage] = action.payload;
+    },
+    updateFullCode: (state, action: PayloadAction<CompilerSliceStateType["fullCode"]>) => {
+      state.fullCode = action.payload;
     }
   },
 });
 
 export default compilerSlice.reducer;
-export const { updateCurrentLanguage, updateCodeValue } =
+export const { updateCurrentLanguage, updateCodeValue, updateFullCode } =
   compilerSlice.actions;

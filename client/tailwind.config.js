@@ -11,7 +11,8 @@ module.exports = {
   theme: {
     fontFamily: {
       gilroyRegular: ["gilroy-regular"],
-      gilroyBold: ["gilroy-bold"]
+      gilroyBold: ["gilroy-bold"],
+      monospace: ["monospace", "sans-serif"]
     },
     container: {
       center: true,

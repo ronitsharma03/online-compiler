@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { Button } from "./ui/button";
 
 const Header = () => {
   return (
@@ -10,9 +9,7 @@ const Header = () => {
         </h2>
       </Link>
 
-      <ul className="select-none text-lg font-gilroyRegular tracking-wider">
-        <li><Link to="/compiler"><Button className="font-semibold">Compiler</Button></Link></li>
-      </ul>
+      
     </nav>
   );
 };
