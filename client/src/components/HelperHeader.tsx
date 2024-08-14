@@ -1,6 +1,7 @@
 import { Share2Icon } from "@radix-ui/react-icons";
 import { Button } from "./ui/button";
 import { Save } from "lucide-react";
+
 import {
   Select,
   SelectContent,
@@ -22,11 +23,10 @@ const HelperHeader = () => {
 
   const handleSaveCode = async () => {
     try {
-      const response = await axios.post("http://localhost:3000/compiler/save", {
+      const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/compiler/save`, {
         fullCode
       });
       console.log(response.data);
-
     } catch (error) {
       console.log(`Error while saving the code`);
     }
